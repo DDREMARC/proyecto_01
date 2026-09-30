@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <title>Mercancía | Los mejores animes</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- BOOTSTRAP CSS: estilos y diseño responsive. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+<body>
+
+    <!-- NAVBAR RESPONSIVE (Bootstrap): enlaces a las páginas del proyecto. -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/logo4.jpg" alt="Los mejores animes" width="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="mercancia.html">Mercancía</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conoce más de nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="contacto.html">Contáctanos</a></li>
+                            <li><a class="dropdown-item" href="redes-sociales.html">Redes sociales</a></li>
+                            <li><a class="dropdown-item" href="libro-de-reclamaciones.html">Libro de reclamaciones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container my-5 pt-5">
+        <header class="text-center py-4">
+            <h1>Mercancía</h1>
+            <p class="lead">Ideas para una futura colección inspirada en el anime.</p>
+        </header>
+        <div class="alert alert-info" role="status">Catálogo de muestra: estos artículos son ejemplos y no están disponibles para compra.</div>
+        
+        <!-- CATÁLOGO DE MUESTRA: sistema grid Bootstrap con tarjetas de ejemplo. -->
+        <section class="row g-4" aria-label="Ejemplos de productos">
+            <div class="col-md-4">
+                <article class="card h-100">
+                    <img src="img/banner01.jpg" class="card-img-top" alt="Diseño de anime de ejemplo">
+                    <div class="card-body"><h2 class="h5 card-title">Ropa temática</h2><p class="card-text">Ejemplo de una categoría de artículos para fans.</p><span class="badge text-bg-secondary">Próximamente</span></div>
+                </article>
+            </div>
+            <div class="col-md-4">
+                <article class="card h-100">
+                    <img src="img/banner02.jpg" class="card-img-top" alt="Diseño de anime de ejemplo">
+                    <div class="card-body"><h2 class="h5 card-title">Accesorios</h2><p class="card-text">Ideas para complementar una colección de anime.</p><span class="badge text-bg-secondary">Próximamente</span></div>
+                </article>
+            </div>
+            <div class="col-md-4">
+                <article class="card h-100">
+                    <img src="img/banner03.jpg" class="card-img-top" alt="Diseño de anime de ejemplo">
+                    <div class="card-body"><h2 class="h5 card-title">Coleccionables</h2><p class="card-text">Espacio para mostrar futuros artículos de colección.</p><span class="badge text-bg-secondary">Próximamente</span></div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA. -->
+    <footer class="py-3 bg-dark text-white"><div class="container text-center"><p class="mb-0">Todos los derechos reservados &copy;</p></div></footer>
+    
+    <!-- BOOTSTRAP JS: activa navbar y menú desplegable. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
