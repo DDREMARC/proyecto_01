@@ -1,21 +1,23 @@
 /* RESET DE CAJA: incluye bordes y relleno en el cálculo del tamaño. */
 * { box-sizing: border-box; }
-/* CUADRÍCULA: organiza las miniaturas y permite que pasen a otra fila. */
-.galeria-grid { width: 90%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-/* MINIATURAS: tamaño, recorte y cursor de las imágenes. */
-.img-galeria { width: 22%; height: 190px; object-fit: cover; cursor: pointer; transition: transform .2s ease; }
-.img-galeria:hover { transform: scale(1.03); }
+/* CUADRÍCULA: centra las miniaturas y permite que pasen a otra fila. */
+.galeria-grid { width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; }
+/* MINIATURAS: cuatro por fila en escritorio, como en el video. */
+.img-galeria { width: 22%; margin: 10px; cursor: pointer; }
 /* FONDO DEL MODAL: cubre la página al ampliar una imagen. */
-.img-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem; background: rgb(0 0 0 / 85%); }
+.modelo { position: fixed; top: 0; left: 0; z-index: 2000; display: none; width: 100%; height: 100%; background: rgb(0 0 0 / 85%); }
 /* IMAGEN AMPLIADA: limita su tamaño al área visible. */
-.img-modal img { max-width: min(90vw, 1100px); max-height: 85vh; object-fit: contain; }
+.modelo img { display: block; width: 35%; max-height: 85vh; margin: 4rem auto 0; object-fit: contain; }
 /* BOTÓN CERRAR: control visible dentro del modal. */
-.cerrar { position: absolute; top: 1rem; right: 2rem; border: 0; background: transparent; color: white; font-size: 2.5rem; line-height: 1; cursor: pointer; }
+.cerrar { position: absolute; top: 10px; right: 5%; width: 35px; border: 0; background: transparent; color: white; font-size: 40px; line-height: 1; cursor: pointer; }
 /* TABLETAS: ajusta el ancho de las miniaturas. */
-@media only screen and (max-width: 980px) { /* CUADRÍCULA: organiza las miniaturas y permite que pasen a otra fila. */
-.galeria-grid { width: 90%; } /* MINIATURAS: tamaño, recorte y cursor de las imágenes. */
-.img-galeria { width: 45%; } }
+@media only screen and (max-width: 980px) {
+    .galeria-grid { width: 90%; }
+    .img-galeria { width: 45%; }
+}
 /* CELULARES: muestra una miniatura por fila. */
-@media only screen and (max-width: 480px) { /* CUADRÍCULA: organiza las miniaturas y permite que pasen a otra fila. */
-.galeria-grid { width: 98%; } /* MINIATURAS: tamaño, recorte y cursor de las imágenes. */
-.img-galeria { width: 100%; } }
+@media only screen and (max-width: 480px) {
+    .galeria-grid { width: 90%; }
+    .img-galeria { width: 100%; }
+    .modelo img { width: 80%; }
+}

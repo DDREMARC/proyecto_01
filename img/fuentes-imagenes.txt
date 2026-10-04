@@ -1,6 +1,0 @@
-Imágenes añadidas a la galería (Wikimedia Commons)
-
-- galeria-personaje-01.jpg: Anime girl.png, Anya2025. CC BY 4.0 (también indicada como dominio público por algoritmo). https://commons.wikimedia.org/wiki/File:Anime_girl.png
-- galeria-personaje-02.jpg: Girl in sailor fuku publicdomainq.png. CC0 1.0. https://commons.wikimedia.org/wiki/File:Girl_in_sailor_fuku_publicdomainq.png
-
-Las imágenes se recortaron y convirtieron a JPEG para la galería.

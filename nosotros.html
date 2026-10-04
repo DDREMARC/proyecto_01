@@ -1,115 +1,94 @@
 <!doctype html>
 <html lang="es" data-bs-theme="light">
-
 <head>
-    <title>Nosotros | Los mejores animes</title>
+    <title>Nosotros | Academia Triunfadores</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
     <!-- BOOTSTRAP CSS: estilos y componentes responsive. -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!-- SCROLLREVEAL: controla la entrada animada de la navegación y el carrusel. -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-
 <body>
-    
     <!-- NAVBAR RESPONSIVE (Bootstrap): navegación común de todas las páginas. -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <!-- NAVBAR RESPONSIVE (Bootstrap): logo y secciones del sitio como en el video. -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" aria-label="Navegación principal">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo4.jpg" alt="Los mejores animes" width="80">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="index.html"><img id="logo" src="img/logo.png" alt="Academia Triunfadores" width="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mercancia.html">Mercancía</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Conoce más de nosotros</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="contacto.html">Contáctanos</a></li>
-                            <li><a class="dropdown-item" href="redes-sociales.html">Redes sociales</a></li>
-                            <li><a class="dropdown-item" href="libro-de-reclamaciones.html">Libro de reclamaciones</a></li>
-                        </ul>
-                    </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="my-5 pt-5">
-        <div class="container">
-            <h1 class="text-center mb-4">Conoce más de nosotros</h1>
-            
-            <!-- ACORDEÓN (Bootstrap, visto en el video): preguntas desplegables sobre el sitio. -->
-            <div class="accordion accordion-flush" id="animeAccordion">
+    <!-- CAROUSEL (Bootstrap): secuencia diferente de banners para la página Nosotros. -->
+    <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
+        <!-- INDICADORES: botones para saltar a cada diapositiva del carrusel. -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Banner 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Banner 2"></button>
+        </div>
+        <!-- DIAPOSITIVAS: imágenes y textos que forman el carrusel. -->
+        <div class="carousel-inner">
+            <div class="carousel-item active"><img src="img/banner4.png" class="d-block w-100" alt="Banner informativo 4"></div>
+            <div class="carousel-item"><img src="img/banner3.png" class="d-block w-100" alt="Banner informativo 3"></div>
+            <div class="carousel-item"><img src="img/banner2.png" class="d-block w-100" alt="Banner informativo 2"></div>
+        </div>
+        <!-- CONTROLES: flechas para avanzar o retroceder en el carrusel. -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
+    </div>
+
+    <main class="container my-5">
+        <!-- PRESENTACIÓN: contenido en dos columnas con imagen responsive. -->
+        <section class="row mb-5">
+            <div class="col-lg-6 align-self-center">
+                <h1>Nosotros</h1>
+                <p>Academia Triunfadores acompaña a sus estudiantes con orientación, preparación académica y recursos para alcanzar sus objetivos.</p>
+            </div>
+            <div class="col-lg-6"><img src="img/img01.png" alt="Estudiante sosteniendo un letrero de ingreso" class="w-100"></div>
+        </section>
+
+        <!-- ACORDEÓN (Bootstrap, visto en el video): preguntas desplegables sobre el sitio. -->
+        <section aria-labelledby="academiaAccordionTitle">
+            <h2 id="academiaAccordionTitle" class="text-center mb-4">Más información</h2>
+            <div class="accordion accordion-flush" id="academiaAccordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed bg-danger text-white" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#animeCollapseOne" aria-expanded="false"
-                            aria-controls="animeCollapseOne">
-                            ¿Qué encontrarás en nuestro centro de anime?
-                        </button>
-                    </h2>
-                    <div id="animeCollapseOne" class="accordion-collapse collapse" data-bs-parent="#animeAccordion">
-                        <div class="accordion-body">
-                            Un espacio para descubrir y compartir contenido relacionado con el anime.
-                        </div>
-                    </div>
+                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseOne" aria-expanded="false" aria-controls="academiaCollapseOne">¿Qué encontrarás en Academia Triunfadores?</button></h3>
+                    <div id="academiaCollapseOne" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">Preparación, acompañamiento y orientación para avanzar hacia tus objetivos académicos.</div></div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#animeCollapseTwo" aria-expanded="false" aria-controls="animeCollapseTwo">
-                            ¿Cómo puedo explorar el contenido?
-                        </button>
-                    </h2>
-                    <div id="animeCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#animeAccordion">
-                        <div class="accordion-body">
-                            Usa la navegación para recorrer las secciones disponibles del sitio.
-                        </div>
-                    </div>
+                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseTwo" aria-expanded="false" aria-controls="academiaCollapseTwo">¿Cómo puedo conocer los servicios?</button></h3>
+                    <div id="academiaCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">Visita la sección Servicios o Contáctanos para conocer las alternativas disponibles.</div></div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#animeCollapseThree" aria-expanded="false" aria-controls="animeCollapseThree">
-                            ¿Dónde puedo ver la mercancía?
-                        </button>
-                    </h2>
-                    <div id="animeCollapseThree" class="accordion-collapse collapse" data-bs-parent="#animeAccordion">
-                        <div class="accordion-body">
-                            Visita la sección <a href="mercancia.html">Mercancía</a> para consultar esa página.
-                        </div>
-                    </div>
+                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseThree" aria-expanded="false" aria-controls="academiaCollapseThree">¿Dónde puedo encontrar recursos para estudiar?</button></h3>
+                    <div id="academiaCollapseThree" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">El mejor curso es el de tu preferencia.</div></div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- PIE DE PÁGINA: texto de derechos reservados. -->
-    <footer class="py-3">
-        <div class="container text-center">
-            <p class="mb-0">Todos los derechos reservados &copy;</p>
-        </div>
-    </footer>
-
-    <!-- BOOTSTRAP JS: permite abrir y cerrar el acordeón y los menús. -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <footer class="mt-5 py-3 bg-dark text-white text-center"><div class="container"><p class="mb-0">&copy; Angel Gabriel. Todos los derechos reservados.</p></div></footer>
+    <!-- BOOTSTRAP JS: permite abrir y cerrar el acordeón, el carrusel y los menús. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- ANIMACIONES: reproduce los efectos de entrada mostrados en la parte 2. -->
+    <script>
+        window.sr = ScrollReveal({ reset: true });
+        sr.reveal('#logo', { duration: 500 });
+        sr.reveal('.navbar-nav', { duration: 1000, origin: 'left', distance: '500px' });
+        sr.reveal('#carouselExampleCaptions', { duration: 2000, origin: 'top', distance: '600px' });
+    </script>
 </body>
-
 </html>
+
