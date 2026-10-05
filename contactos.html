@@ -9,8 +9,7 @@
     <!-- BOOTSTRAP ICONS: iconos de redes sociales del pie de página. -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <style>
-        .mapa iframe { width: 100%; height: 350px; border: 0; }
-        .contactos { min-height: 350px; }
+        .mapa iframe { width: 100%; height: 450px; border: 0; }
     </style>
 </head>
 <body>
@@ -19,13 +18,18 @@
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Academia Triunfadores" width="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="contactos.html">Contactos</a></li>
+                    <!-- MENÚ DESPLEGABLE: opciones de información sobre los servicios. -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="contactos.html">Contacto</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -33,31 +37,36 @@
 
     <main class="container-fluid px-0 pt-5 mt-4">
         <!-- MAPA DE UBICACIÓN: mapa incrustado de Google Maps, como en el video. -->
-        <section class="row g-0 align-items-stretch" aria-label="Ubicación y formulario de contacto">
-            <div class="col-lg-8 mapa">
+        <section aria-label="Ubicación y formulario de contacto">
+            <div class="mapa">
                 <iframe title="Mapa de la Plaza de Armas de Lima" src="https://maps.google.com/maps?q=Plaza%20de%20Armas%20de%20Lima&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
-            <div class="col-lg-4 contactos p-4">
+            <div class="container contactos p-4">
+                <div class="row">
+                    <div class="col-lg-8"></div>
+                    <div class="col-lg-4">
                 <!-- FORMULARIO DE CONTACTO (Bootstrap): envía los datos a MySQL mediante envio.php. -->
                 <form action="envio.php" method="post">
                     <div class="mb-3">
                         <label for="nombres" class="form-label">Apellidos y Nombres</label>
-                        <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingresa tus Nombres" maxlength="100" required>
+                        <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingresa tus Nombres" maxlength="30" required>
                     </div>
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingresa tu Dirección" maxlength="150" required>
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingresa tu Dirección" maxlength="50" required>
                     </div>
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu Correo" maxlength="254" required>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu Correo" maxlength="50" required>
                     </div>
                     <div class="mb-3">
                         <label for="comentarios" class="form-label">Comentarios</label>
                         <textarea class="form-control" id="comentarios" name="comentarios" rows="3" placeholder="Escribe tu comentario" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="form-control bg-dark text-white">Enviar</button>
                 </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

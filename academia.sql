@@ -7,19 +7,16 @@ USE academia;
 
 -- FORMULARIO DE CONTACTOS: registros recibidos desde contactos.html.
 CREATE TABLE IF NOT EXISTS datos (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombres VARCHAR(100) NOT NULL,
-    direccion VARCHAR(150) NOT NULL,
-    correo VARCHAR(254) NOT NULL,
-    comentarios TEXT NOT NULL,
-    fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    nombres VARCHAR(30) NOT NULL,
+    direccion VARCHAR(50) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
+    comentarios TEXT NOT NULL
 );
 
 -- USUARIOS DE DEMOSTRACIÓN: tabla usada por login.php.
 CREATE TABLE IF NOT EXISTS academia (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    usuario VARCHAR(30) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL
+    usuario VARCHAR(30) NOT NULL PRIMARY KEY,
+    password VARCHAR(30) NOT NULL
 );
 
 -- Cuenta local de ejemplo del tutorial; cambia la contraseña para uso propio.

@@ -1,44 +1,40 @@
 <?php
-// ENVÍO DEL FORMULARIO: guarda los datos de contactos.html en la tabla datos.
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+// ENVÍO DEL FORMULARIO: recibe los campos enviados desde contactos.html.
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // CONEXIÓN MYSQLI: host, usuario root y contraseña vacía de XAMPP local.
+    $conexion = mysqli_connect("localhost", "root", "");
 
-try {
-    // MÉTODO POST: rechaza accesos directos antes de intentar conectar a MySQL.
-    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        header("Location: contactos.html");
-        exit;
+    if (!$conexion) {
+        die("Problemas al conectar: " . mysqli_connect_error());
+    }
+    mysqli_set_charset($conexion, "utf8mb4");
+
+    // SELECCIÓN DE BASE DE DATOS: usa la base academia creada en phpMyAdmin.
+    if (!mysqli_select_db($conexion, "academia")) {
+        die("Problemas al seleccionar la base de datos");
     }
 
-    // CONEXIÓN A MYSQL: configuración local predeterminada de XAMPP.
-    $conexion = new mysqli("localhost", "root", "", "academia");
-    $conexion->set_charset("utf8mb4");
+    // DATOS POST: nombres coinciden con los atributos name del formulario.
+    $nombres = mysqli_real_escape_string($conexion, trim($_POST["nombres"] ?? ""));
+    $direccion = mysqli_real_escape_string($conexion, trim($_POST["direccion"] ?? ""));
+    $correo = mysqli_real_escape_string($conexion, trim($_POST["correo"] ?? ""));
+    $comentarios = mysqli_real_escape_string($conexion, trim($_POST["comentarios"] ?? ""));
 
-    $nombres = trim($_POST["nombres"] ?? "");
-    $direccion = trim($_POST["direccion"] ?? "");
-    $correo = trim($_POST["correo"] ?? "");
-    $comentarios = trim($_POST["comentarios"] ?? "");
+    // INSERT SQL: guarda los cuatro valores recibidos en la tabla datos.
+    $sql = "INSERT INTO datos (nombres, direccion, correo, comentarios)
+            VALUES ('$nombres', '$direccion', '$correo', '$comentarios')";
 
-    if ($nombres === "" || $direccion === "" || !filter_var($correo, FILTER_VALIDATE_EMAIL) || $comentarios === "") {
-        throw new InvalidArgumentException("Completa todos los campos con datos válidos.");
+    if (mysqli_query($conexion, $sql)) {
+        // CONFIRMACIÓN: muestra el aviso y regresa a la página principal.
+        echo '<script>alert("Datos enviados correctamente"); window.location.href="index.html";</script>';
+    } else {
+        echo '<script>alert("Problemas al enviar los datos"); window.location.href="index.html";</script>';
     }
 
-    // INSERT SEGURO: la consulta preparada trata los datos ingresados como valores.
-    $consulta = $conexion->prepare(
-        "INSERT INTO datos (nombres, direccion, correo, comentarios) VALUES (?, ?, ?, ?)"
-    );
-    $consulta->bind_param("ssss", $nombres, $direccion, $correo, $comentarios);
-    $consulta->execute();
-    $consulta->close();
-    $conexion->close();
-
-    // CONFIRMACIÓN: vuelve al formulario después de guardar el registro.
-    echo '<script>alert("Datos enviados correctamente"); window.location.href="contactos.html";</script>';
-} catch (Throwable $error) {
-    // ERROR: el detalle técnico queda en el registro del servidor.
-    error_log($error->getMessage());
-    $mensaje = $error instanceof InvalidArgumentException
-        ? $error->getMessage()
-        : "No se pudo guardar. Revisa que MySQL esté iniciado y que la base academia esté importada.";
-    echo "<script>alert(" . json_encode($mensaje) . "); window.location.href='contactos.html';</script>";
+    mysqli_close($conexion);
+} else {
+    // ACCESO DIRECTO: vuelve al sitio si el formulario no se envió por POST.
+    header("Location: contactos.html");
+    exit;
 }
 ?>

@@ -19,13 +19,18 @@
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Academia Triunfadores" width="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
+                    <!-- MENÚ DESPLEGABLE: opciones de información sobre los servicios. -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="contactos.html">Contacto</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -34,7 +39,7 @@
     <!-- FORMULARIO DE ACCESO: tarjeta centrada hecha con componentes Bootstrap. -->
     <main class="container py-5 mt-5">
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col-12 col-lg-4">
                 <section class="card login-card mx-auto shadow-sm">
                     <div class="card-body p-4 p-md-5">
                         <div class="text-center mb-4">

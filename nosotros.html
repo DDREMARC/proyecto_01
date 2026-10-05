@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- BOOTSTRAP CSS: estilos y componentes responsive. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <!-- SCROLLREVEAL: controla la entrada animada de la navegación y el carrusel. -->
-    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <!-- NAVBAR RESPONSIVE (Bootstrap): navegación común de todas las páginas. -->
@@ -16,13 +14,18 @@
         <div class="container">
             <a class="navbar-brand" href="index.html"><img id="logo" src="img/logo.png" alt="Academia Triunfadores" width="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
+                <!-- MENÚ DESPLEGABLE: opciones de información sobre los servicios. -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="contactos.html">Contacto</a></li>
+                    </ul>
+                </li>
                 </ul>
             </div>
         </div>
@@ -46,31 +49,30 @@
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
     </div>
-
     <main class="container my-5">
-        <!-- PRESENTACIÓN: contenido en dos columnas con imagen responsive. -->
-        <section class="row mb-5">
+        <!-- CABECERA DE NOSOTROS: presentación e imagen que anima ScrollReveal al llegar a esta sección. -->
+        <header class="row mb-5">
             <div class="col-lg-6 align-self-center">
                 <h1>Nosotros</h1>
                 <p>Academia Triunfadores acompaña a sus estudiantes con orientación, preparación académica y recursos para alcanzar sus objetivos.</p>
             </div>
             <div class="col-lg-6"><img src="img/img01.png" alt="Estudiante sosteniendo un letrero de ingreso" class="w-100"></div>
-        </section>
+        </header>
 
         <!-- ACORDEÓN (Bootstrap, visto en el video): preguntas desplegables sobre el sitio. -->
         <section aria-labelledby="academiaAccordionTitle">
             <h2 id="academiaAccordionTitle" class="text-center mb-4">Más información</h2>
             <div class="accordion accordion-flush" id="academiaAccordion">
                 <div class="accordion-item">
-                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseOne" aria-expanded="false" aria-controls="academiaCollapseOne">¿Qué encontrarás en Academia Triunfadores?</button></h3>
+                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseOne" aria-expanded="false" aria-controls="academiaCollapseOne">De dónde obtenemos los materiales para las clases?</button></h3>
                     <div id="academiaCollapseOne" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">Preparación, acompañamiento y orientación para avanzar hacia tus objetivos académicos.</div></div>
                 </div>
                 <div class="accordion-item">
-                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseTwo" aria-expanded="false" aria-controls="academiaCollapseTwo">¿Cómo puedo conocer los servicios?</button></h3>
-                    <div id="academiaCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">Visita la sección Servicios o Contáctanos para conocer las alternativas disponibles.</div></div>
+                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseTwo" aria-expanded="false" aria-controls="academiaCollapseTwo">Cuál es el mejor curso? de Tu preferencia??</button></h3>
+                    <div id="academiaCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">El mejor curso es el de tu preferencia.</div></div>
                 </div>
                 <div class="accordion-item">
-                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseThree" aria-expanded="false" aria-controls="academiaCollapseThree">¿Dónde puedo encontrar recursos para estudiar?</button></h3>
+                    <h3 class="accordion-header"><button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#academiaCollapseThree" aria-expanded="false" aria-controls="academiaCollapseThree">Accordion Item #3</button></h3>
                     <div id="academiaCollapseThree" class="accordion-collapse collapse" data-bs-parent="#academiaAccordion"><div class="accordion-body">El mejor curso es el de tu preferencia.</div></div>
                 </div>
             </div>
@@ -81,12 +83,16 @@
     <footer class="mt-5 py-3 bg-dark text-white text-center"><div class="container"><p class="mb-0">&copy; Angel Gabriel. Todos los derechos reservados.</p></div></footer>
     <!-- BOOTSTRAP JS: permite abrir y cerrar el acordeón, el carrusel y los menús. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- JQUERY Y SCROLLREVEAL: bibliotecas usadas en las animaciones del video. -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- ANIMACIONES: reproduce los efectos de entrada mostrados en la parte 2. -->
     <script>
         window.sr = ScrollReveal({ reset: true });
         sr.reveal('#logo', { duration: 500 });
         sr.reveal('.navbar-nav', { duration: 1000, origin: 'left', distance: '500px' });
         sr.reveal('#carouselExampleCaptions', { duration: 2000, origin: 'top', distance: '600px' });
+        sr.reveal('header', { duration: 3000, origin: 'bottom', distance: '600px' });
     </script>
 </body>
 </html>

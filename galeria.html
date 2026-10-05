@@ -27,14 +27,19 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span
                     class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="galeria.html">Galería</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
+                    <!-- MENÚ DESPLEGABLE: opciones de información sobre los servicios. -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="contactos.html">Contacto</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -61,12 +66,6 @@
             <i class="bi bi-twitter m-3"></i>
         </div>
     </div>
-    <!-- VISTA AMPLIADA: modal de imagen con botón de cierre. -->
-    <div class="modelo">
-        <button class="cerrar" type="button" aria-label="Cerrar imagen">&times;</button>
-        <img src="galeria/img00.jpg" alt="Imagen ampliada">
-    </div>
-
     <!-- PIE DE PÁGINA: mantiene el nombre de autor del proyecto. -->
     <footer class="py-3 bg-dark text-white text-center">
         <div class="container">
@@ -78,16 +77,17 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         $(function () {
-            // Al hacer clic, coloca la miniatura seleccionada en el modal y la muestra.
+            // Al hacer clic, crea y agrega al documento la vista ampliada de esa imagen.
             $('.img-galeria').on('click', function () {
-                const imagen = $(this);
-                $('.modelo img').attr('src', imagen.attr('src'));
-                $('.modelo').show();
+                const imagen = this.src;
+                const modelo = `<div class="modelo"><img src="${imagen}" alt="Imagen ampliada"><button class="cerrar" type="button" aria-label="Cerrar imagen">&times;</button></div>`;
+                $('body, html').append(modelo);
             });
-            // El botón de cierre oculta la imagen ampliada.
-            $('.cerrar').on('click', function () { $('.modelo').hide(); });
-            $(document).on('keydown', function (event) {
-                if (event.keyCode === 27) $('.modelo').hide();
+            // La X elimina del documento la imagen ampliada.
+            $(document).on('click', '.cerrar', function () { $('.modelo').remove(); });
+            // Escape oculta la imagen ampliada, como en el video.
+            $('body').on('keyup', function (event) {
+                if (event.which === 27) $('.modelo').hide();
             });
         });
     </script>
