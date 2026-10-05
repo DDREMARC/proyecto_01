@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <title>Login | Academia Triunfadores</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BOOTSTRAP CSS: estilos y diseño adaptable a teléfonos y computadoras. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!-- BOOTSTRAP ICONS: iconos de redes sociales del pie de página. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <style>
+        .login-card { max-width: 440px; }
+        .login-logo { width: 105px; height: 105px; object-fit: contain; }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR RESPONSIVE (Bootstrap): navegación principal del sitio. -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Academia Triunfadores" width="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FORMULARIO DE ACCESO: tarjeta centrada hecha con componentes Bootstrap. -->
+    <main class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <section class="card login-card mx-auto shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="text-center mb-4">
+                            <img class="login-logo mb-3" src="img/logo.png" alt="Logo de Academia Triunfadores">
+                            <h1 class="h3">Iniciar sesión</h1>
+                        </div>
+                        <form action="login.php" method="post">
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" name="usuario" autocomplete="username" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- REDES SOCIALES: iconos ubicados al final de la página. -->
+    <div class="social bg-dark py-5">
+        <div class="redes text-white text-center" style="font-size:30px;">
+            <i class="bi bi-facebook m-3"></i>
+            <i class="bi bi-instagram m-3"></i>
+            <i class="bi bi-youtube m-3"></i>
+            <i class="bi bi-twitter m-3"></i>
+        </div>
+    </div>
+    <!-- PIE DE PÁGINA: crédito del autor. -->
+    <footer class="py-3 bg-dark text-white text-center">
+        <p class="mb-0">&copy; Angel Gabriel. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- BOOTSTRAP JS: activa el menú de navegación adaptable. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

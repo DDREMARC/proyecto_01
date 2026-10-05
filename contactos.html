@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="contactos.html">Contactos</a></li>
                 </ul>
@@ -39,19 +38,23 @@
                 <iframe title="Mapa de la Plaza de Armas de Lima" src="https://maps.google.com/maps?q=Plaza%20de%20Armas%20de%20Lima&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
             <div class="col-lg-4 contactos p-4">
-                <!-- FORMULARIO DE CONTACTO (Bootstrap): captura datos de ejemplo en esta página. -->
-                <form action="">
+                <!-- FORMULARIO DE CONTACTO (Bootstrap): envía los datos a MySQL mediante envio.php. -->
+                <form action="envio.php" method="post">
                     <div class="mb-3">
-                        <p>Apellidos y Nombres</p>
-                        <input type="text" class="form-control" placeholder="Ingresa tus Nombres">
+                        <label for="nombres" class="form-label">Apellidos y Nombres</label>
+                        <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingresa tus Nombres" maxlength="100" required>
                     </div>
                     <div class="mb-3">
-                        <p>Dirección</p>
-                        <input type="text" class="form-control" placeholder="Ingresa tu Dirección">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingresa tu Dirección" maxlength="150" required>
                     </div>
                     <div class="mb-3">
-                        <p>Correo</p>
-                        <input type="email" class="form-control" placeholder="Ingresa tu Correo">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu Correo" maxlength="254" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comentarios" class="form-label">Comentarios</label>
+                        <textarea class="form-control" id="comentarios" name="comentarios" rows="3" placeholder="Escribe tu comentario" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
