@@ -52,7 +52,7 @@ proyecto_01/
 ├── css/galeria.css     Estilos de la galería y el modal
 ├── flexslider.css / flexslider-personal.css / jquery.flexslider*.js
 ├── img/                Logo y banners
-└── galeria/            7 fotos de la galería
+└── galeria/            8 fotos de la galería
 ```
 
 ## 5. Tecnologías y código usado
@@ -125,6 +125,7 @@ Nota: ambos archivos usan `mysqli_real_escape_string` y validan el método POST,
 | contactos.html | Formulario dentro de `card` y `card-body`; "Servicios" marcado como activo |
 | login.html | Botón `form-control bg-dark text-white`; logo centrado; se quitó el título "Iniciar sesión" |
 | pagina.html | Se añadió `main.container` con tres párrafos |
+| galeria.html | Se agregó la 8.ª imagen (`galeria/img07.jpg`); antes había 7 |
 
 ## 7. Pruebas realizadas
 
