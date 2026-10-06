@@ -37,6 +37,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
                             <li><a class="dropdown-item" href="contactos.html">Contacto</a></li>
                         </ul>
                     </li>
@@ -85,9 +86,9 @@
             });
             // La X elimina del documento la imagen ampliada.
             $(document).on('click', '.cerrar', function () { $('.modelo').remove(); });
-            // Escape oculta la imagen ampliada, como en el video.
+            // Tecla Escape (27) elimina la imagen ampliada, como en el video.
             $('body').on('keyup', function (event) {
-                if (event.which === 27) $('.modelo').hide();
+                if (event.which === 27) $('.modelo').remove();
             });
         });
     </script>
