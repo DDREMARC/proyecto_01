@@ -50,7 +50,7 @@ proyecto_01/
 ├── login.php           Valida usuario y contraseña
 ├── academia.sql        Base de datos y tablas
 ├── css/galeria.css     Estilos de la galería y el modal
-├── flexslider.css / flexslider-personal.css / jquery.flexslider*.js
+├── flexslider.css / jquery.flexslider*.js
 ├── img/                Logo y banners
 └── galeria/            8 fotos de la galería
 ```
